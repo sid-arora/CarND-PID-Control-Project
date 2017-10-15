@@ -1,0 +1,18 @@
+Parameter Selection
+
+Steering angle:
+
+Based on testing, the following values were chosen:
+Proportional Constant (Kp): 0.15  - it gave near equal amplitude assuming vehicle is driven on straight road.
+Differential Constant (Kd): 2.5 - to achieve dampening for overshoot due to proportional factor.
+Integral Constant (Ki): 0.001 - to avoid oscillations.
+
+Steering angle and throttle:
+After trial and error, I selected 10 for the Kd of the throttle pid controller. The throttle should be decreased if cross track error (cte) is high. Therefore, the hyper parameters for throttle are decreased or increased only when the rate of
+change of cte cross track error (cte) is high. Hence, only Kd for throttle is being tuned.
+
+With throttle controller set, I again tuned the parameters for steering controller similar to steps above and finally set the values to:
+
+Kp = 0.3
+Kd = 2.7
+Ki = 0.001
